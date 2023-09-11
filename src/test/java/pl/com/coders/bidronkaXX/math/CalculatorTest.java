@@ -21,4 +21,12 @@ class CalculatorTest {
 
         assertEquals(1, add);
     }
+
+    @Test
+    void subtract() {
+        Calculator calculator = new Calculator();
+        int subtract = calculator.subtract(15, 10);
+
+        assertEquals(5, subtract);
+    }
 }
