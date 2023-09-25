@@ -15,9 +15,38 @@ public class Calculator {
             sum = sum + list.get(i);
         }
 
-//        for (Integer i : list) {
-//            sum = sum + i;
-//        }
+        return sum;
+    }
+
+    public int remove(List<Integer> list) {
+        int sum = 0;
+
+        for (int i = 0; i < list.size(); i++) {
+            sum = sum - list.get(i);
+        }
+
+        return sum;
+    }
+
+    public long multiply(List<Integer> list) {
+
+        int sum = 1;
+
+        for (int i = 0; i < list.size(); i++) {
+            sum = sum * list.get(i);
+        }
+
+        return sum;
+    }
+
+    public float divide(List<Float> list) {
+
+        float sum = 1;
+
+        for (int i = 0; i < list.size(); i++) {
+            sum = sum * list.get(i);
+        }
+
         return sum;
     }
 
@@ -32,5 +61,17 @@ public class Calculator {
         return a / b;
     }
 
+    public int powerOf(int number, int powerOf) {
+        if (number == 0) {
+            throw new IllegalArgumentException("number nie moze byc zero");
+        }
 
+        int sum = 1;
+
+        for (int i = 0; i < powerOf; i++) {
+            sum = sum * number;
+        }
+
+        return sum;
+    }
 }

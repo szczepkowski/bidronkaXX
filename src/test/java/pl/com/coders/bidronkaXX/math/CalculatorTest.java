@@ -9,12 +9,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
 
+    private static final String VALUE = "Moja wartość";
+
     @Test
     void add() {
         Calculator calculator = new Calculator();
         int add = calculator.add(500, 502);
 
         assertEquals(1002, add);
+
     }
 
     @Test
@@ -65,5 +68,32 @@ class CalculatorTest {
         int add = calculator.add(ints);
 
         assertEquals(4950, add);
+    }
+
+    @Test
+    void powerOf() {
+        Calculator calculator = new Calculator();
+        calculator.powerOf(0, 0);
+    }
+
+    @Test
+    void testMultiply() {
+        List<Integer> ints = new ArrayList<>();
+        ints.add(1);
+        ints.add(2);
+        ints.add(3);
+
+        Calculator calculator = new Calculator();
+        long multiply = calculator.multiply(ints);
+
+        assertEquals(6, multiply);
+    }
+
+    @Test
+    void testPowerOf() {
+        Calculator calculator = new Calculator();
+        int result = calculator.powerOf(2, 2);
+
+        assertEquals(4, result);
     }
 }
