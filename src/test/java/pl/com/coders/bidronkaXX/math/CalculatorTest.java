@@ -73,7 +73,9 @@ class CalculatorTest {
     @Test
     void powerOf() {
         Calculator calculator = new Calculator();
-        calculator.powerOf(0, 0);
+        int result = calculator.powerOf(2, 2);
+
+        assertEquals(result, 4);
     }
 
     @Test
@@ -95,5 +97,26 @@ class CalculatorTest {
         int result = calculator.powerOf(2, 2);
 
         assertEquals(4, result);
+    }
+
+    @Test
+    void fib() {
+    }
+
+    @Test
+    void remove() {
+    }
+
+    @Test
+    void testDivide() {
+        List<Float> ints = new ArrayList<>();
+        ints.add(1F);
+        ints.add(2F);
+        ints.add(3F);
+
+        Calculator calculator = new Calculator();
+        float divide = calculator.divide(ints);
+
+        assertEquals(0.1666666716337204, divide);
     }
 }

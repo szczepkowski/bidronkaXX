@@ -44,7 +44,7 @@ public class Calculator {
         float sum = 1;
 
         for (int i = 0; i < list.size(); i++) {
-            sum = sum * list.get(i);
+            sum = sum / list.get(i);
         }
 
         return sum;
@@ -74,4 +74,10 @@ public class Calculator {
 
         return sum;
     }
+
+    public int fib(int n){
+        return 0;
+    }
 }
+
+//0 1 1 2 3 5 8 13 21 34
