@@ -1,11 +1,11 @@
 package pl.com.coders.bidronkaXX.domain;
 
 import org.junit.jupiter.api.Test;
+import pl.com.coders.bidronkaXX.math.Calculator;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Collectors;
 
 class ProductTest {
 
@@ -20,5 +20,17 @@ class ProductTest {
         products.add(bread);
         products.add(water);
 
+        List<Float> prices = products.stream().map(product -> product.getPrice())
+                .collect(Collectors.toList());
+
+        Calculator calculator = new Calculator();
+        float sum = calculator.addFloats(prices);
+
+
+        for (Product product : products) {
+            System.out.println(product.getName() + " " + product.getPrice() + " PLN");
+        }
+        System.out.println();
+        System.out.println("w sumie " +sum + " PLN");
     }
 }

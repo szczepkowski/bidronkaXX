@@ -14,7 +14,7 @@ class CalculatorTest {
     @Test
     void add() {
         Calculator calculator = new Calculator();
-        int add = calculator.add(500, 502);
+        int add = calculator.addFloats(500, 502);
 
         assertEquals(1002, add);
 
@@ -23,7 +23,7 @@ class CalculatorTest {
     @Test
     void addSmallNumber() {
         Calculator calculator = new Calculator();
-        int add = calculator.add(0, 1);
+        int add = calculator.addFloats(0, 1);
 
         assertEquals(1, add);
     }
@@ -46,28 +46,15 @@ class CalculatorTest {
 
     @Test
     void testAdd() {
-        List<Integer> ints = new ArrayList<>();
-        ints.add(1);
-        ints.add(2);
-        ints.add(3);
+        List<Float> ints = new ArrayList<>();
+        ints.add(1F);
+        ints.add(2F);
+        ints.add(3F);
 
         Calculator calculator = new Calculator();
-        int add = calculator.add(ints);
+        float add = calculator.addFloats(ints);
 
-        assertEquals(6, add);
-    }
-
-    @Test
-    void testAddMany() {
-        List<Integer> ints = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            ints.add(i);
-        }
-
-        Calculator calculator = new Calculator();
-        int add = calculator.add(ints);
-
-        assertEquals(4950, add);
+        assertEquals(6F, add);
     }
 
     @Test

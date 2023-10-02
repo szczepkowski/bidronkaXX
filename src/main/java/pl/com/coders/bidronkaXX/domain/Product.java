@@ -32,4 +32,14 @@ public class Product {
     public LocalDateTime getUpdated() {
         return updated;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", created=" + created +
+                ", updated=" + updated +
+                '}';
+    }
 }
