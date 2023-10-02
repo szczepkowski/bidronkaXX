@@ -2,6 +2,7 @@ package pl.com.coders.bidronkaXX.repository;
 
 import org.springframework.stereotype.Repository;
 import pl.com.coders.bidronkaXX.domain.Receipt;
+import pl.com.coders.bidronkaXX.exceptions.ReceiptNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +21,11 @@ public class ReceiptRepository {
         return true;
     }
 
-    public Receipt get(UUID uuid) {
+    public Receipt get(UUID uuid) throws ReceiptNotFoundException {
         return this.receipts.stream()
                 .filter(receipt -> uuid.equals(receipt.getId()))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Receipt not found with " + uuid));
+                .orElseThrow(() -> new ReceiptNotFoundException("Receipt not found with " + uuid));
     }
 
     //TODO add method delete receipt
