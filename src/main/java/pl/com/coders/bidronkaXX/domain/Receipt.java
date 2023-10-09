@@ -11,6 +11,7 @@ public class Receipt {
 
     private final UUID id;
     private final List<Product> products;
+    //TODO dodać status paragonu
     private Float sum = 0F;
 
     public Receipt(List<Product> products) {
