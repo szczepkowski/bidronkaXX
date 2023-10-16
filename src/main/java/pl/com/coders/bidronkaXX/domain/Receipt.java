@@ -11,13 +11,14 @@ public class Receipt {
 
     private final UUID id;
     private final List<Product> products;
-    //TODO dodać status paragonu
+    private ReceiptStatus status;
     private Float sum = 0F;
 
     public Receipt(List<Product> products) {
         this.id = UUID.randomUUID();
         this.products = products;
         totalCost(products);
+        status = ReceiptStatus.STARTED;
     }
 
     public void totalCost(List<Product> products) {
@@ -41,13 +42,29 @@ public class Receipt {
         return sum;
     }
 
+    public void finish() {
+        this.status = ReceiptStatus.FINISHED;
+    }
+
+    public ReceiptStatus getStatus() {
+        return status;
+    }
+
+    public void addProduct(Product product) {
+        this.products.add(product);
+        this.totalCost(this.getProducts());
+    }
+
     @Override
     public String toString() {
         return "Receipt{" +
                 "calculator=" + calculator +
                 ", id=" + id +
                 ", products=" + products +
+                ", status=" + status +
                 ", sum=" + sum +
                 '}';
     }
+
+
 }

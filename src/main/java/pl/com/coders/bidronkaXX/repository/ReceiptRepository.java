@@ -35,6 +35,15 @@ public class ReceiptRepository {
                 .orElseThrow(() -> new ReceiptNotFoundException("Receipt not found with " + uuid));
     }
 
+    public Receipt update(Receipt receipt) throws ReceiptNotFoundException {
+        Receipt savedReceipt = get(receipt.getId());
+        this.receipts.remove(savedReceipt);
+        receipt.finish();
+        this.receipts.add(receipt);
+
+        return receipt;
+    }
+
     //TODO add method delete receipt + test
 
     //TODO add me to update receipt + test

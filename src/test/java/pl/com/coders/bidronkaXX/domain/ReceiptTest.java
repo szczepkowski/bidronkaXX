@@ -22,6 +22,7 @@ class ReceiptTest {
         products.add(water);
 
         Receipt receipt = new Receipt(products);
+        receipt.finish();
 
         System.out.println(receipt);
 
